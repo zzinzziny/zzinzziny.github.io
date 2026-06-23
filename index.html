@@ -6,7 +6,7 @@
 <title>Jiin Han — VLM &amp; Table QA Researcher</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Spline+Sans+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&family=Spline+Sans+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#1a1a1a;
@@ -30,10 +30,25 @@
     margin:0 auto;
   }
   a{color:inherit}
+
+  /* ---- Header ---- */
   header{
     border-bottom:1.5px solid var(--ink);
     padding-bottom:1.4rem;
     margin-bottom:2.4rem;
+    display:flex;
+    align-items:flex-start;
+    gap:1.8rem;
+  }
+  .header-text{flex:1}
+  .portrait{
+    width:120px;
+    height:120px;
+    border-radius:6px;
+    object-fit:cover;
+    border:1px solid var(--line);
+    flex-shrink:0;
+    background:var(--cell);
   }
   .eyebrow{
     font-family:'Spline Sans Mono',monospace;
@@ -44,8 +59,8 @@
     margin-bottom:1rem;
   }
   h1{
-    font-family:'Fraunces',serif;
-    font-weight:500;
+    font-family:'Newsreader',serif;
+    font-weight:700;
     font-size:clamp(2.4rem,7vw,3.8rem);
     line-height:1.02;
     letter-spacing:-.01em;
@@ -64,6 +79,12 @@
     max-width:46ch;
   }
   .role strong{font-weight:500;color:var(--accent)}
+  @media (max-width:560px){
+    header{flex-direction:column-reverse;align-items:flex-start}
+    .portrait{width:96px;height:96px}
+  }
+
+  /* ---- Section ---- */
   section{margin-bottom:2.6rem}
   .label{
     font-family:'Spline Sans Mono',monospace;
@@ -77,29 +98,20 @@
     gap:.7rem;
   }
   .label::after{content:"";flex:1;height:1px;background:var(--line)}
-  p.lede{font-size:1rem;max-width:62ch;color:#33312c}
-  .grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    border:1px solid var(--line);
-    border-radius:4px;
-    overflow:hidden;
-  }
-  .grid div{
-    background:var(--cell);
-    padding:1rem 1.1rem;
-    border:.5px solid var(--line);
-  }
-  .grid div .k{
-    font-family:'Spline Sans Mono',monospace;
-    font-size:.66rem;
-    letter-spacing:.1em;
-    text-transform:uppercase;
+
+  /* ---- Research: keyword tags ---- */
+  .tags{display:flex;flex-wrap:wrap;gap:.55rem}
+  .tags span{
+    background:var(--accent-soft);
     color:var(--accent);
-    display:block;
-    margin-bottom:.35rem;
+    border:1px solid #cdd9d0;
+    border-radius:999px;
+    padding:.4rem .95rem;
+    font-size:.9rem;
+    font-weight:500;
   }
-  .grid div .v{font-size:.95rem;font-weight:500}
+
+  /* ---- Education / list rows ---- */
   .row{
     display:flex;
     justify-content:space-between;
@@ -117,22 +129,49 @@
     white-space:nowrap;
     padding-top:.15rem;
   }
+
+  /* ---- Publications ---- */
   .pub{
     padding:.7rem 0;
     border-bottom:1px solid var(--line);
     font-size:.95rem;
   }
   .pub:last-child{border-bottom:none}
-  .pub .venue{
-    color:var(--accent);
-    font-weight:500;
-  }
+  .pub .venue{color:var(--accent);font-weight:500}
   .pub .auth{color:var(--muted);font-size:.86rem}
-  .links{
+
+  /* ---- Awards ---- */
+  .award{
     display:flex;
-    flex-wrap:wrap;
-    gap:.6rem;
+    gap:1rem;
+    padding:.6rem 0;
+    border-bottom:1px solid var(--line);
+    font-size:.93rem;
   }
+  .award:last-child{border-bottom:none}
+  .award .yr{
+    font-family:'Spline Sans Mono',monospace;
+    font-size:.78rem;
+    color:var(--accent);
+    white-space:nowrap;
+    padding-top:.1rem;
+  }
+  .award .body .org{color:var(--muted);font-size:.84rem}
+
+  /* ---- Skills ---- */
+  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem}
+  .skill-block .st{
+    font-family:'Spline Sans Mono',monospace;
+    font-size:.68rem;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin-bottom:.5rem;
+  }
+  .skill-block .sv{font-size:.92rem;color:#33312c}
+
+  /* ---- Contact / links ---- */
+  .links{display:flex;flex-wrap:wrap;gap:.6rem}
   .links a{
     text-decoration:none;
     border:1px solid var(--ink);
@@ -146,11 +185,9 @@
     gap:.45rem;
   }
   .links a:hover{background:var(--ink);color:var(--paper)}
-  .links a .dot{
-    width:6px;height:6px;border-radius:50%;
-    background:var(--accent);
-  }
+  .links a .dot{width:6px;height:6px;border-radius:50%;background:var(--accent)}
   .links a:hover .dot{background:var(--paper)}
+
   footer{
     margin-top:3rem;
     padding-top:1.4rem;
@@ -170,14 +207,22 @@
 <body>
 
 <header>
-  <div class="eyebrow">Sungkyunkwan University</div>
-  <h1>Jiin Han<span class="ko">한지인</span></h1>
-  <p class="role">Integrated MS&ndash;PhD researcher in <strong>vision-language models</strong> and <strong>table question answering</strong>, advised by Prof. Yunseok Choi. Currently on research dispatch at the University of Oslo.</p>
+  <div class="header-text">
+    <div class="eyebrow">Sungkyunkwan University</div>
+    <h1>Jiin Han<span class="ko">한지인</span></h1>
+    <p class="role">Integrated MS&ndash;PhD Researcher (Prof. Yunseok Choi)</p>
+  </div>
+  <img class="portrait" src="profile.jpg" alt="Jiin Han">
 </header>
 
 <section>
   <div class="label">Research</div>
-  <p class="lede">I study how multimodal models read structured documents &mdash; and where they fail. My current work probes the mechanisms behind table understanding in VLMs, building benchmarks and interpretability tools to make these systems faithful, not just accurate. My background spans NLP, statistics, and cognitive science.</p>
+  <div class="tags">
+    <span>Multimodal Learning</span>
+    <span>Large Language Models Reasoning</span>
+    <span>Table Visual Question Answering</span>
+    <span>Document Visual Question Answering</span>
+  </div>
 </section>
 
 <section>
@@ -213,7 +258,7 @@
 </section>
 
 <section>
-  <div class="label">Selected Publications</div>
+  <div class="label">Publications</div>
   <div class="pub">
     <div>PubTables-QA: A Benchmark Toward Cross-Page Table Reasoning in Table Visual Question Answering</div>
     <div class="auth"><strong>Jiin Han</strong>, S. Bae, Y. Choi, S. Lee, K. Kim, R. Kim, J.-H. Lee, C. Choi, Y. Choi &middot; <span class="venue">KDD 2026 Workshop (RespMultimodal)</span></div>
@@ -229,6 +274,67 @@
 </section>
 
 <section>
+  <div class="label">Awards</div>
+  <div class="award">
+    <div class="yr">2025.08</div>
+    <div class="body">
+      <div>2nd place, 2025 Chungbuk Public Data Utilization Startup Competition</div>
+      <div class="org">Chungbuk Institute of Science and Technology Innovation</div>
+    </div>
+  </div>
+  <div class="award">
+    <div class="yr">2024.04</div>
+    <div class="body">
+      <div>Best Idea Award, 2024 ALAK Workshop &amp; My GPTs Challenge</div>
+      <div class="org">Applied Linguistics Association of Korea</div>
+    </div>
+  </div>
+  <div class="award">
+    <div class="yr">2023.11</div>
+    <div class="body">
+      <div>Encouragement Award, 2023 Tourism Data Utilization Contest</div>
+      <div class="org">Korea Tourism Organization</div>
+    </div>
+  </div>
+  <div class="award">
+    <div class="yr">2023.08</div>
+    <div class="body">
+      <div>3rd place (KEPCO KPS President Award), 11th Public Data Utilization Business Idea Contest</div>
+      <div class="org">Ministry of Trade, Industry and Energy</div>
+    </div>
+  </div>
+  <div class="award">
+    <div class="yr">2022.11</div>
+    <div class="body">
+      <div>3rd place, Artificial Intelligence Idea Festival</div>
+      <div class="org">Hankuk University of Foreign Studies</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="label">Skills</div>
+  <div class="skills">
+    <div class="skill-block">
+      <div class="st">Programming / Deep Learning</div>
+      <div class="sv">NumPy, Pandas, Scikit-learn &middot; BERT/Transformer fine-tuning &middot; training &amp; fine-tuning LLMs</div>
+    </div>
+    <div class="skill-block">
+      <div class="st">Data Analysis</div>
+      <div class="sv">R, SPSS, SAS &middot; data mining and statistical analysis</div>
+    </div>
+    <div class="skill-block">
+      <div class="st">Linux</div>
+      <div class="sv">Shell scripting &middot; Docker build</div>
+    </div>
+    <div class="skill-block">
+      <div class="st">Languages</div>
+      <div class="sv">Korean (native) &middot; English (fluent)</div>
+    </div>
+  </div>
+</section>
+
+<section>
   <div class="label">Elsewhere</div>
   <div class="links">
     <a href="mailto:jiin.han@skku.edu"><span class="dot"></span>jiin.han@skku.edu</a>
@@ -239,7 +345,7 @@
 </section>
 
 <footer>
-  <span>Seoul &middot; Oslo</span>
+  <span>Seoul</span>
   <span>Last updated 2026</span>
 </footer>
 
