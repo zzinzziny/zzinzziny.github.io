@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jiin Han — VLM &amp; Table QA Researcher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Spline+Sans+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a1a1a;
+    --paper:#f6f4ef;
+    --line:#d9d4c8;
+    --accent:#3a5f4a;
+    --accent-soft:#e7ede8;
+    --muted:#6b665c;
+    --cell:#ece8df;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    padding:clamp(1.5rem,5vw,4rem);
+    max-width:880px;
+    margin:0 auto;
+  }
+  a{color:inherit}
+  header{
+    border-bottom:1.5px solid var(--ink);
+    padding-bottom:1.4rem;
+    margin-bottom:2.4rem;
+  }
+  .eyebrow{
+    font-family:'Spline Sans Mono',monospace;
+    font-size:.72rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin-bottom:1rem;
+  }
+  h1{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    font-size:clamp(2.4rem,7vw,3.8rem);
+    line-height:1.02;
+    letter-spacing:-.01em;
+  }
+  h1 .ko{
+    display:block;
+    font-size:.42em;
+    color:var(--muted);
+    font-weight:400;
+    margin-top:.5rem;
+    letter-spacing:0;
+  }
+  .role{
+    margin-top:1.2rem;
+    font-size:1.05rem;
+    max-width:46ch;
+  }
+  .role strong{font-weight:500;color:var(--accent)}
+  section{margin-bottom:2.6rem}
+  .label{
+    font-family:'Spline Sans Mono',monospace;
+    font-size:.7rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:.9rem;
+    display:flex;
+    align-items:center;
+    gap:.7rem;
+  }
+  .label::after{content:"";flex:1;height:1px;background:var(--line)}
+  p.lede{font-size:1rem;max-width:62ch;color:#33312c}
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    border:1px solid var(--line);
+    border-radius:4px;
+    overflow:hidden;
+  }
+  .grid div{
+    background:var(--cell);
+    padding:1rem 1.1rem;
+    border:.5px solid var(--line);
+  }
+  .grid div .k{
+    font-family:'Spline Sans Mono',monospace;
+    font-size:.66rem;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--accent);
+    display:block;
+    margin-bottom:.35rem;
+  }
+  .grid div .v{font-size:.95rem;font-weight:500}
+  .row{
+    display:flex;
+    justify-content:space-between;
+    gap:1rem;
+    padding:.75rem 0;
+    border-bottom:1px solid var(--line);
+  }
+  .row:last-child{border-bottom:none}
+  .row .main{font-weight:500}
+  .row .sub{color:var(--muted);font-size:.9rem}
+  .row .when{
+    font-family:'Spline Sans Mono',monospace;
+    font-size:.78rem;
+    color:var(--muted);
+    white-space:nowrap;
+    padding-top:.15rem;
+  }
+  .pub{
+    padding:.7rem 0;
+    border-bottom:1px solid var(--line);
+    font-size:.95rem;
+  }
+  .pub:last-child{border-bottom:none}
+  .pub .venue{
+    color:var(--accent);
+    font-weight:500;
+  }
+  .pub .auth{color:var(--muted);font-size:.86rem}
+  .links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.6rem;
+  }
+  .links a{
+    text-decoration:none;
+    border:1px solid var(--ink);
+    border-radius:999px;
+    padding:.5rem 1.1rem;
+    font-size:.9rem;
+    font-weight:500;
+    transition:all .18s ease;
+    display:inline-flex;
+    align-items:center;
+    gap:.45rem;
+  }
+  .links a:hover{background:var(--ink);color:var(--paper)}
+  .links a .dot{
+    width:6px;height:6px;border-radius:50%;
+    background:var(--accent);
+  }
+  .links a:hover .dot{background:var(--paper)}
+  footer{
+    margin-top:3rem;
+    padding-top:1.4rem;
+    border-top:1px solid var(--line);
+    font-family:'Spline Sans Mono',monospace;
+    font-size:.7rem;
+    letter-spacing:.08em;
+    color:var(--muted);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:.5rem;
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Sungkyunkwan University</div>
+  <h1>Jiin Han<span class="ko">한지인</span></h1>
+  <p class="role">Integrated MS&ndash;PhD researcher in <strong>vision-language models</strong> and <strong>table question answering</strong>, advised by Prof. Yunseok Choi. Currently on research dispatch at the University of Oslo.</p>
+</header>
+
+<section>
+  <div class="label">Research</div>
+  <p class="lede">I study how multimodal models read structured documents &mdash; and where they fail. My current work probes the mechanisms behind table understanding in VLMs, building benchmarks and interpretability tools to make these systems faithful, not just accurate. My background spans NLP, statistics, and cognitive science.</p>
+</section>
+
+<section>
+  <div class="label">Education</div>
+  <div class="row">
+    <div>
+      <div class="main">University of Oslo</div>
+      <div class="sub">Visiting PhD Student, DSB group &mdash; Digital Signal Processing &amp; Image Analysis</div>
+    </div>
+    <div class="when">2026 &ndash;</div>
+  </div>
+  <div class="row">
+    <div>
+      <div class="main">Sungkyunkwan University</div>
+      <div class="sub">Integrated MS&ndash;PhD, Immersive Media Engineering</div>
+    </div>
+    <div class="when">2025 &ndash;</div>
+  </div>
+  <div class="row">
+    <div>
+      <div class="main">Hankuk University of Foreign Studies</div>
+      <div class="sub">MS, Artificial Convergence</div>
+    </div>
+    <div class="when">2023 &ndash; 24</div>
+  </div>
+  <div class="row">
+    <div>
+      <div class="main">Hankuk University of Foreign Studies</div>
+      <div class="sub">BS, Linguistics &amp; Cognitive Science &middot; BS, Statistics</div>
+    </div>
+    <div class="when">2020 &ndash; 23</div>
+  </div>
+</section>
+
+<section>
+  <div class="label">Selected Publications</div>
+  <div class="pub">
+    <div>PubTables-QA: A Benchmark Toward Cross-Page Table Reasoning in Table Visual Question Answering</div>
+    <div class="auth"><strong>Jiin Han</strong>, S. Bae, Y. Choi, S. Lee, K. Kim, R. Kim, J.-H. Lee, C. Choi, Y. Choi &middot; <span class="venue">KDD 2026 Workshop (RespMultimodal)</span></div>
+  </div>
+  <div class="pub">
+    <div>SPIN-SQL: Stepwise Perturbation with In-Context Prompting for Robustness Evaluation of Text-to-SQL Models</div>
+    <div class="auth">Kangmin Lee, <strong>Jiin Han</strong>, Yunseok Choi &middot; <span class="venue">KAIA 2025</span></div>
+  </div>
+  <div class="pub">
+    <div>Development of Literature Short-Form System using Emotional Keyword</div>
+    <div class="auth">S.W. Roh, S.C. Kim, T.H. Kim, J.W. Bae, <strong>J.I. Han</strong>, S.J. Oh, I.C. Doo &middot; <span class="venue">CSA 2022</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="label">Elsewhere</div>
+  <div class="links">
+    <a href="mailto:jiin.han@skku.edu"><span class="dot"></span>jiin.han@skku.edu</a>
+    <a href="https://orcid.org/0009-0005-1091-6287"><span class="dot"></span>ORCID</a>
+    <a href="https://github.com/zzinzziny"><span class="dot"></span>GitHub</a>
+    <a href="https://scholar.google.com/citations?user=CHANGE_ME"><span class="dot"></span>Google Scholar</a>
+  </div>
+</section>
+
+<footer>
+  <span>Seoul &middot; Oslo</span>
+  <span>Last updated 2026</span>
+</footer>
+
+</body>
+</html>
